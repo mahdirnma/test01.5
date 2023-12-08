@@ -1,13 +1,16 @@
 <?php
 require_once "../connection.php";
 abstract class Model extends connection{
-    public $table;
+    public $tablename;
     public $conn;
     public function __construct($table){
-        $this->table=$table;
+        $this->tablename=$table;
         $this->conn=$this->connected();
     }
     public function select(){
-        $this->conn->query("SELECT * FROM".$this->table);
+        return $this->conn->query("SELECT * FROM ".$this->tablename);
     }
+    abstract public function insert($data=[]);
+    abstract public function delete($id);
+    abstract public function update($data=[]);
 }

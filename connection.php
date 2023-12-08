@@ -2,7 +2,7 @@
 class connection
 {
     public $dbserver = "localhost";
-    public $dbname = "shop2";
+    public $dbname = "shop-test";
     public $username = "root";
     public $password = "";
 
